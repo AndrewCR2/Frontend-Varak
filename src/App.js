@@ -16,6 +16,8 @@ import Inicio from "./componets/Inicio/paginaInicio";
 import Principal from "./componets/Principal/Principal";
 import validateToken from "./helpers/validateToken";
 import Body from "./componets/Principal/Body";
+import ListSedesComponet from "./componets/sede/ListSedeComponet";
+import AddSedeComponet from "./componets/sede/AddSedeComponent";
 
 
 
@@ -32,19 +34,8 @@ function App() {
           <Route exact path='/' element={<Inicio />}></Route>
           <Route exact path='/login' element={<Login />}></Route>
           <Route exact path='/create-usuario' element={<CreateUsuarioComponet />}></Route>
-          {/* <Route exact path='/principal' element={<Principal />} onEnter={validateToken}></Route> */}
 
-                //*Esto
-          {/* <Route path='/clientes' element={<ListClientesComponet />}></Route>
-          <Route path='/add-cliente' element={<AddClienteComponet />}></Route>
-          <Route path='/edit-cliente/:id' element={<AddClienteComponet />}></Route>
-          <Route path='/vehiculos' element={<ListVehiculoComponet />}></Route>
-          <Route path='/add-vehiculo' element={<AddVehiculoComponent />}></Route>
-          <Route path='/edit-vehiculo/:id' element={<AddVehiculoComponent />}></Route>
-          <Route path='/reservas' element={<ListReservasComponets />}></Route>
-          <Route path='/add-reserva' element={<AddReservaComponet />}></Route>
-          <Route path='/edit-reserva/:id' element={<AddReservaComponet />}></Route> */}
-
+        {/* Rutas privadas */}
           <Route
             path='/principal'
             element={<Body />}
@@ -93,6 +84,21 @@ function App() {
           <Route
             path='/edit-reserva/:id'
             element={<AddReservaComponet />}
+            onEnter={validateToken} // Llama a validateToken al ingresar a la ruta
+          />
+          <Route
+            path='/sedes'
+            element={<ListSedesComponet />}
+            onEnter={validateToken} // Llama a validateToken al ingresar a la ruta
+          />
+          <Route
+            path='/add-sede'
+            element={<AddSedeComponet />}
+            onEnter={validateToken} // Llama a validateToken al ingresar a la ruta
+          />
+          <Route
+            path='/edit-sede/:id'
+            element={<AddSedeComponet />}
             onEnter={validateToken} // Llama a validateToken al ingresar a la ruta
           />
         </Routes>
