@@ -14,6 +14,7 @@ export const Principal = () => {
     if (location.pathname !== '/principal' &&
         location.pathname !== '/clientes' &&
         location.pathname !== '/reservas' &&
+        location.pathname !== '/personal' &&
         location.pathname !== '/sedes' &&
         location.pathname !== '/vehiculos') {
         return null;
@@ -35,6 +36,7 @@ export const Principal = () => {
                             <li><a class="nav-link scrollto" href="/vehiculos">Vehiculos</a></li>
                             <li><a class="nav-link scrollto" href="/reservas">Reservas</a></li>
                             <li><a class="nav-link scrollto" href="/sedes">Sede</a></li>
+                            <li><a class="nav-link scrollto" href="/personal">Personal</a></li>
 
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
