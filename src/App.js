@@ -18,6 +18,8 @@ import validateToken from "./helpers/validateToken";
 import Body from "./componets/Principal/Body";
 import ListSedesComponet from "./componets/sede/ListSedeComponet";
 import AddSedeComponet from "./componets/sede/AddSedeComponent";
+import ListPersonalComponet from "./componets/personal/ListPersonalComponent";
+import AddPersonalComponet from "./componets/personal/AddPersonalComponent";
 
 
 
@@ -99,6 +101,21 @@ function App() {
           <Route
             path='/edit-sede/:id'
             element={<AddSedeComponet />}
+            onEnter={validateToken} // Llama a validateToken al ingresar a la ruta
+          />
+          <Route
+            path='/personal'
+            element={<ListPersonalComponet />}
+            onEnter={validateToken} // Llama a validateToken al ingresar a la ruta
+          />
+          <Route
+            path='/add-personal'
+            element={<AddPersonalComponet />}
+            onEnter={validateToken} // Llama a validateToken al ingresar a la ruta
+          />
+          <Route
+            path='/edit-personal/:id'
+            element={<AddPersonalComponet />}
             onEnter={validateToken} // Llama a validateToken al ingresar a la ruta
           />
         </Routes>
